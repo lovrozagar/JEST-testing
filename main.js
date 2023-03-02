@@ -1,12 +1,18 @@
+// CAPITALIZE
+
 function capitalize(string) {
   return !string
     ? ''
     : string.trimStart().charAt(0).toUpperCase() + string.trimStart().slice(1)
 }
 
+// REVERSE STRING
+
 function reverseString(string) {
   return !string ? '' : string.split('').reverse().join('')
 }
+
+// CALCULATOR
 
 const calculator = {
   add(a, b) {
@@ -22,6 +28,8 @@ const calculator = {
     return a / b
   },
 }
+
+// CAESAR CIPHER
 
 function caesarCipher(string, shiftFactor) {
   return string
@@ -52,13 +60,31 @@ function isNonAlpha(char) {
     return true
 }
 
+// ANALYZE ARRAY
+
 function analyzeArray(array) {
   return {
-    average: array.reduce((arr, curr) => arr + curr, 0) / array.length,
-    min: Math.min(...array),
-    max: Math.max(...array),
-    length: array.length,
+    average: average(array),
+    min: min(array),
+    max: max(array),
+    length: length(array),
   }
+}
+
+function average(array) {
+  return array.reduce((arr, curr) => arr + curr, 0) / array.length
+}
+
+function min(array) {
+  return Math.min(...array)
+}
+
+function max(array) {
+  return Math.max(...array)
+}
+
+function length(array) {
+  return array.length
 }
 
 export { capitalize, reverseString, calculator, caesarCipher, analyzeArray }
